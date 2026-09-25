@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "news-collect-validate"
+version = "0.1.0"
+description = "Offline quality gate for collected news Markdown"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.10"
+authors = [{ name = "hrtaym1114" }]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0"]
+
+[project.urls]
+Homepage = "https://github.com/hrtaym1114-github/news-collect-validate"
+Related = "https://github.com/hrtaym1114-github/x-jev-gate"
+
+[project.scripts]
+news-collect-validate = "news_collect_validate.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
