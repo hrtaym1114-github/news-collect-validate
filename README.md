@@ -1,3 +1,4 @@
+English: [README.en.md](README.en.md)
 # news-collect-validate
 
 ニュース収集 Markdown の「創作見出し／index URL 事故」を後工程に流さない、**オフラインの収集品質ゲート**。  
@@ -52,7 +53,7 @@ news-collect-validate borders examples/fail.md
 news-collect-validate borders examples/pass.md --json
 python -m news_collect_validate borders examples/pass.md
 news-collect-validate trend --text '1. [Source](https://example.com/news/1234)' --json
-# FAIL / exit 1: trend requires at least 10 items
+# 終了コード 1。JSON は "ok": false、"problems": ["件数が少なすぎる: 1件（最低 10件）"]
 ```
 
 PASS JSON の例:
@@ -71,7 +72,7 @@ PASS JSON の例:
 
 ## Rules / 判定ルール
 
-元の `validate-news-collection.py` から抽出。URL ヒューリスティック・しきい値・重複・件数フォールバックを維持しています。
+以前の内部検証スクリプトから派生。URL ヒューリスティック・しきい値・重複・件数フォールバックを維持しています。
 
 - 数えるリンクはインライン Markdown の HTTP(S) `](https://...)` のみ
 - index 扱い: 空 path、`/`、`/news`、`/news/`、`/aiplus`、`/aiplus/`、`/index.html`
